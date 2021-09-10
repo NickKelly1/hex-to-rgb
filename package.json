@@ -1,0 +1,107 @@
+{
+  "name": "hex-to-rgb",
+  "main": "./dist/extension.js",
+  "displayName": "Hex To RGB",
+  "version": "1.0.0",
+  "description": "Flexible converter between hex and rgb colours",
+  "author": "Nick Kelly",
+  "publisher": "hextorgb",
+  "homepage": "https://github.com/NickKelly1/hex-to-rgb#readme",
+  "readme": "https://github.com/NickKelly1/hex-to-rgb#readme",
+  "license": "Mozilla Public License 2.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:NickKelly1/hex-to-rgb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NickKelly1/hex-to-rgb/issues"
+  },
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:hex-to-rgb.hexToRgb",
+    "onCommand:hex-to-rgb.hexToRgbRaw",
+    "onCommand:hex-to-rgb.rgbToHex",
+    "onCommand:hex-to-rgb.toHex",
+    "onCommand:hex-to-rgb.toRgb"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "hex-to-rgb.hexToRgb",
+        "title": "Hex to RGB color"
+      },
+      {
+        "command": "hex-to-rgb.hexToRgbRaw",
+        "title": "Hex to RGB color (numbers only)"
+      },
+      {
+        "command": "hex-to-rgb.rgbToHex",
+        "title": "RGB to hex color"
+      },
+      {
+        "command": "hex-to-rgb.toHex",
+        "title": "To hex color"
+      },
+      {
+        "command": "hex-to-rgb.toRgb",
+        "title": "To RGB color"
+      }
+    ]
+  },
+  "keywords": [
+    "TypeScript",
+    "JavaScript"
+  ],
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "remove:compile": "webpack",
+    "watch": "webpack --config config/webpack.config.js --watch",
+    "package": "webpack --config config/webpack.config.js --mode production",
+    "test-compile": "tsc -p config/tsconfig.build.json",
+    "test-watch": "tsc -watch -p config/tsconfig.build.json",
+    "preset": "npm run test-compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./dist/test/runTest.js",
+    "old::test": "jest -c config/jest.config.ts",
+    "old::build": "rimraf dist && rollup -c config/rollup.config.js",
+    "old::test:watch": "jest -c config/jest.config.ts --watch",
+    "old::publish:prepare": "cp package.json dist && cp LICENSE dist && cp README.md dist"
+  },
+  "devDependencies": {
+    "@jest/types": "^27.1.1",
+    "@nkp/config": "^0.0.9",
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
+    "@types/jest": "^27.0.1",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.9.1",
+    "@types/vscode": "^1.60.0",
+    "@typescript-eslint/eslint-plugin": "^4.31.0",
+    "@typescript-eslint/parser": "^4.31.0",
+    "eslint": "^7.31.0",
+    "glob": "^7.1.7",
+    "mocha": "^9.1.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.56.3",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "ts-loader": "^9.2.5",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.2",
+    "vscode-test": "^1.6.1",
+    "webpack": "^5.52.0",
+    "webpack-cli": "^4.8.0"
+  },
+  "dependencies": {
+    "@nkp/color": "^1.0.6",
+    "@types/glob": "^7.1.4",
+    "jest": "^27.1.1",
+    "ts-jest": "^27.0.5"
+  }
+}
