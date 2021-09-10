@@ -2,11 +2,11 @@ import vscode from 'vscode';
 import { handleConversion } from '../utils/handle-conversion';
 
 /**
- * Convert all colours to hex
+ * To #hexx
  *
  * @param $e
  */
-export function commandToHex($e: vscode.TextEditor): void {
+export function commandtoHexx($e: vscode.TextEditor): void {
   handleConversion($e, (match) => {
     return match.color.toHex();
   });

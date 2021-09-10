@@ -1,5 +1,13 @@
 # Change Log
 
+## [1.0.2] - 2021-09-09
+
+### Changed
+
+- Updated readme.md
+- Updated dependencies
+- Updated commands
+
 ## [1.0.1] - 2021-09-09
 
 ### Changed

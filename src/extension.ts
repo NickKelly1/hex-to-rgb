@@ -1,11 +1,18 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import vscode from 'vscode';
-import { commandHexToRgb } from './commands/hex-to-rgb';
-import { commandHexToRgbRaw } from './commands/hex-to-rgb-raw';
-import { commandRgbToHex } from './commands/rgb-to-hex';
-import { commandToHex } from './commands/to-hex';
-import { commandToRgb } from './commands/to-rgb';
+import { commandToHex_ } from './commands/to-hex_';
+import { commandToHexa } from './commands/to-hexa';
+import { commandtoHexx } from './commands/to-hexx';
+import { commandToRgb_Css } from './commands/to-rgb_css';
+import { commandToRgb_Numbers } from './commands/to-rgb_numbers';
+import { commandToRgb_Smart } from './commands/to-rgb_smart';
+import { commandToRgbaCss } from './commands/to-rgba-css';
+import { commandToRgbaNumbers } from './commands/to-rgba-numbers';
+import { commandToRgbaSmart } from './commands/to-rgba-smart';
+import { commandToRgbxCss } from './commands/to-rgbx-css';
+import { commandToRgbxNumbers } from './commands/to-rgbx-numbers';
+import { commandToRgbxSmart } from './commands/to-rgbx-smart';
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -19,42 +26,28 @@ export function activate(context: vscode.ExtensionContext): void {
   // Now provide the implementation of the command with registerCommand
   // The commandId parameter must match the command field in package.json
 
-  const dhexToRgb = vscode.commands.registerCommand('hex-to-rgb.hexToRgb', () => {
-    const editor = vscode.window.activeTextEditor;
-    if (!editor) vscode.window.showWarningMessage('[Hex to RGB::hexToRgb] No editor');
-    else commandHexToRgb(editor);
-  });
+  function register(command: string, fn: ($e: vscode.TextEditor) => void): vscode.Disposable {
+    return vscode.commands.registerCommand(`hex-to-rgb.${command}`, () => {
+      const $e = vscode.window.activeTextEditor;
+      if (!$e) vscode.window.showWarningMessage('No active text editor');
+      else fn($e);
+    });
+  }
 
-  const dHexToRgbRaw = vscode.commands.registerCommand('hex-to-rgb.hexToRgbRaw', () => {
-    const editor = vscode.window.activeTextEditor;
-    if (!editor) vscode.window.showWarningMessage('[Hex to RGB::hexToRgbRaw] No editor');
-    else commandHexToRgbRaw(editor);
-  });
-
-  const dRgbToHex = vscode.commands.registerCommand('hex-to-rgb.rgbToHex', () => {
-    const editor = vscode.window.activeTextEditor;
-    if (!editor) vscode.window.showWarningMessage('[Hex to RGB::rgbToHex] No editor');
-    else commandRgbToHex(editor);
-  });
-
-  const dToHex = vscode.commands.registerCommand('hex-to-rgb.toHex', () => {
-    const editor = vscode.window.activeTextEditor;
-    if (!editor) vscode.window.showWarningMessage('[Hex to RGB::toHex] No editor');
-    else commandToHex(editor);
-  });
-
-  const dToRgb = vscode.commands.registerCommand('hex-to-rgb.toRgb', () => {
-    const editor = vscode.window.activeTextEditor;
-    if (!editor) vscode.window.showWarningMessage('[Hex to RGB::toRgb] No editor');
-    else commandToRgb(editor);
-  });
 
   context.subscriptions.push(
-    dhexToRgb,
-    dHexToRgbRaw,
-    dRgbToHex,
-    dToHex,
-    dToRgb,
+    register('toHex_', commandToHex_),
+    register('toHexa', commandToHexa),
+    register('toHexx', commandtoHexx),
+    register('toRgb_Css', commandToRgb_Css),
+    register('toRgb_Numbers', commandToRgb_Numbers),
+    register('toRgb_Smart', commandToRgb_Smart),
+    register('toRgbaCss', commandToRgbaCss),
+    register('toRgbaNumbers', commandToRgbaNumbers),
+    register('toRgbaSmart', commandToRgbaSmart),
+    register('toRgbxCss', commandToRgbxCss),
+    register('toRgbxNumbers', commandToRgbxNumbers),
+    register('toRgbxSmart', commandToRgbxSmart),
   );
 }
 

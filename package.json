@@ -12,7 +12,7 @@
   "license": "Mozilla Public License 2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com:NickKelly1/hex-to-rgb"
+    "url": "https://github.com/NickKelly1/hex-to-rgb"
   },
   "bugs": {
     "url": "https://github.com/NickKelly1/hex-to-rgb/issues"
@@ -24,34 +24,33 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:hex-to-rgb.hexToRgb",
-    "onCommand:hex-to-rgb.hexToRgbRaw",
-    "onCommand:hex-to-rgb.rgbToHex",
+    "onCommand:hex-to-rgb.toHex_",
+    "onCommand:hex-to-rgb.toHexa",
     "onCommand:hex-to-rgb.toHex",
-    "onCommand:hex-to-rgb.toRgb"
+    "onCommand:hex-to-rgb.toRgb_Css",
+    "onCommand:hex-to-rgb.toRgb_Numbers",
+    "onCommand:hex-to-rgb.toRgb_Smart",
+    "onCommand:hex-to-rgb.toRgbaCss",
+    "onCommand:hex-to-rgb.toRgbaNumbers",
+    "onCommand:hex-to-rgb.toRgbaSmart",
+    "onCommand:hex-to-rgb.toRgbxCss",
+    "onCommand:hex-to-rgb.toRgbxNumbers",
+    "onCommand:hex-to-rgb.toRgbxSmart"
   ],
   "contributes": {
     "commands": [
-      {
-        "command": "hex-to-rgb.hexToRgb",
-        "title": "Hex to RGB color"
-      },
-      {
-        "command": "hex-to-rgb.hexToRgbRaw",
-        "title": "Hex to RGB color (numbers only)"
-      },
-      {
-        "command": "hex-to-rgb.rgbToHex",
-        "title": "RGB to hex color"
-      },
-      {
-        "command": "hex-to-rgb.toHex",
-        "title": "To hex color"
-      },
-      {
-        "command": "hex-to-rgb.toRgb",
-        "title": "To RGB color"
-      }
+      { "command": "hex-to-rgb.toHex_", "title": "To #hex_" },
+      { "command": "hex-to-rgb.toHexa", "title": "To #hexa" },
+      { "command": "hex-to-rgb.toHexx", "title": "To #hex (smart)" },
+      { "command": "hex-to-rgb.toRgb_Css", "title": "To 🎨 rgb_ css" },
+      { "command": "hex-to-rgb.toRgb_Numbers", "title": "To 🎨 rgb_ numbers " },
+      { "command": "hex-to-rgb.toRgb_Smart", "title": "To 🎨 rgb_" },
+      { "command": "hex-to-rgb.toRgbaCss", "title": "To 🎨 rgba css" },
+      { "command": "hex-to-rgb.toRgbaNumbers", "title": "To 🎨 rgba numbers" },
+      { "command": "hex-to-rgb.toRgbaSmart", "title": "To 🎨 rgba" },
+      { "command": "hex-to-rgb.toRgbxCss", "title": "To 🎨 rgbx (smart) css" },
+      { "command": "hex-to-rgb.toRgbxNumbers", "title": "To 🎨 rgbx (smart) numbers" },
+      { "command": "hex-to-rgb.toRgbxSmart", "title": "To 🎨 rgbx (smart)" }
     ]
   },
   "keywords": [

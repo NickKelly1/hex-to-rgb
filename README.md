@@ -1,10 +1,10 @@
 # Hex to RGB README
 
-Fully featured VSCode extension to convert colours between Hex and RGB.
+Fully featured VSCode extension to convert colors between hex and RGB.
 
 Uses the [`@nkp/color`](https://www.npmjs.com/package/@nkp/color) library.
 
-![logo](images/logo.png)
+![logo](images/rgb-to-hex.gif)
 
 ## Features
 
@@ -23,6 +23,8 @@ Uses the [`@nkp/color`](https://www.npmjs.com/package/@nkp/color) library.
   - hex6
   - hex8 (alhpa)
 - Can convert to RGBx numbers without the rgb css text wrapping
+
+![logo](images/rgb-to-hex-2.gif)
 
 ## Requirements
 
