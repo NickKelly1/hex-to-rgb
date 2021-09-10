@@ -1,8 +1,9 @@
 {
   "name": "hex-to-rgb",
+  "icon": "images/logo.png",
   "main": "./dist/extension.js",
   "displayName": "Hex To RGB",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Flexible converter between hex and rgb colours",
   "author": "Nick Kelly",
   "publisher": "hextorgb",
@@ -11,7 +12,7 @@
   "license": "Mozilla Public License 2.0",
   "repository": {
     "type": "git",
-    "url": "git@github.com:NickKelly1/hex-to-rgb.git"
+    "url": "https://github.com:NickKelly1/hex-to-rgb"
   },
   "bugs": {
     "url": "https://github.com/NickKelly1/hex-to-rgb/issues"
