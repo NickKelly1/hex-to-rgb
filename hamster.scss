@@ -1,0 +1,25 @@
+$fur: 50, 58, 178;
+
+.hamster {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid rgba(#{$fur}, 60%);
+
+  .fur {
+    background-color: $fur;
+  }
+
+  .eye {
+    .white {
+      background-color: rgba(255, 255, 255, 0.749);
+    }
+    .iris {
+      background-color: rgba(87, 233, 51, 0.8);
+    }
+  }
+
+  .foot {
+    background-color: rgb(211, 135, 122);
+  }
+}

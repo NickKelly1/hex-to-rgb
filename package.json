@@ -1,6 +1,6 @@
 {
   "name": "hex-to-rgb",
-  "icon": "images/logo.png",
+  "icon": "images/logo-256.png",
   "main": "./dist/extension.js",
   "displayName": "Hex To RGB",
   "version": "1.0.2",
